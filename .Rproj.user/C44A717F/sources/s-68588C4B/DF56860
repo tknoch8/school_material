@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1582677207240.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DF56860",
+    "lastKnownWriteTime" : 1582678821,
+    "last_content_update" : 1582678821276,
+    "path" : "~/OneDrive - Polaris Alpha/r/school_material/460_342/r_scripts/EuroFAdemo.R",
+    "project_path" : "460_342/r_scripts/EuroFAdemo.R",
+    "properties" : {
+        "cursorPosition" : "140,55",
+        "scrollLine" : "105"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

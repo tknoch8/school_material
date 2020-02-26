@@ -1,0 +1,11 @@
+library(here)
+
+# now I can call any file from within the directory
+
+# for example
+mydata <- read.csv(here("bears.csv"))
+mydata
+
+# way easier than typing the whole fucking file path, and you can send it to other people
+  # and it works for them too, because it's all in the project's folder. They just need to
+  # open the .Rproj file.

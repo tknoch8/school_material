@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1559826644274.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "15739383",
+    "id" : "745E8AAE",
+    "lastKnownWriteTime" : 1551458977,
+    "last_content_update" : 1559826685121,
+    "path" : "~/OneDrive - Polaris Alpha/r/school_material/460_342/r_scripts/factorial_experiment.R",
+    "project_path" : "r_scripts/factorial_experiment.R",
+    "properties" : {
+        "cursorPosition" : "32,0",
+        "docOutlineVisible" : "0",
+        "scrollLine" : "5"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

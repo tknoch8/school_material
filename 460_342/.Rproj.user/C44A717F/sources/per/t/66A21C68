@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549752510701.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3699687687",
+    "id" : "66A21C68",
+    "lastKnownWriteTime" : 1547482349,
+    "last_content_update" : 1547482349,
+    "path" : "~/OneDrive - Polaris Alpha/r/tidy_eval.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

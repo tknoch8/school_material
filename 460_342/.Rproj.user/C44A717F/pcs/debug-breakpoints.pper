@@ -1,0 +1,21 @@
+{
+    "debugBreakpointsState" : {
+        "breakpoints" : [
+            {
+                "editor_line_number" : 111,
+                "editor_state" : 1,
+                "function_name" : "toplevel",
+                "function_steps" : "",
+                "id" : 2,
+                "is_package_breakpoint" : false,
+                "is_pending_debug_completion" : false,
+                "line_number" : 111,
+                "needs_updated_steps" : false,
+                "package_name" : "",
+                "path" : "~/OneDrive - Polaris Alpha/r/460_342/r_scripts/EuroFAdemo.R",
+                "state" : 1,
+                "type" : 1
+            }
+        ]
+    }
+}

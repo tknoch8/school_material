@@ -1,0 +1,100 @@
+#generated Poisson example
+x <- rep(seq(1,10), 6)
+y <- rpois(60, lambda = 7*x)
+plot(x,y)
+lmPoisFit <- lm(y ~ x)
+summary(lmPoisFit)
+library(MASS)
+rStudResid <- studres(lmPoisFit)
+plot(lmPoisFit$fitted.values, rStudResid)
+yTrans <- sqrt(y)
+plot(x, yTrans)
+lmTransFit <- lm(yTrans ~ x)
+summary(lmTransFit)  #what is interpretation of beta?
+rStudTransResid <- studres(lmTransFit)
+plot(lmTransFit$fitted.values, rStudTransResid)
+
+
+nflDat <- read.csv("Teaching/STAT341Regression/Data/linear_regression_5e_data_sets/Appendices/data-table-B1.csv")
+nflFit2 <- lm(y ~ x2 + x7 + x8 + x9, data = nflDat)
+summary(nflFit2)
+rStudentResids <- studres(nflFit2)
+plot(nflFit2$fitted.values, rStudentResids)
+transY <- asin(sqrt(nflDat[, "y"]/14))  #divide by 14 b/c that is number of games.
+nflDat <- cbind(nflDat, transY)
+nflFitTrans <- lm(transY ~ x2 + x7 + x8 + x9, data = nflDat)
+summary(nflFitTrans)  #what is interpretation of beta?
+rStudTransResids <- studres(nflFitTrans)
+plot(nflFitTrans$fitted.values, rStudTransResids)
+
+x <- rep(seq(1,10), 6)
+y <- rpois(60, lambda = 7*x)
+lmFit <- lm(y ~ x)
+boxcox(lmFit)
+abline(v = .5, col = 2)
+
+
+
+########
+#WLS
+########
+cleaningDat <- read.table("Teaching/STAT341Regression/Data/ScheatherData/cleaning.txt", header = T)
+#note that since the file is a text file ".txt" rather than a comma-separated-value file ".csv", we
+#use a different read function to read the data into R
+
+cleaningDat
+plot(cleaningDat[, c("Crews", "Rooms")])
+#fit a standard regression
+cleanLM1 <- lm(Rooms ~ Crews, data = cleaningDat)
+summary(cleanLM1)
+library(MASS)
+rStud1 <- studres(cleanLM1)
+plot(cleanLM1$fitted.values, rStud1)
+#pretty clearly violates assumption of common variance
+
+#one approach:  since number of rooms cleaned could be thought of as a count variable, do a 
+#square root transformation
+yPrime <- sqrt(cleaningDat[, "Rooms"])
+cleaningDat <- cbind(cleaningDat, yPrime)
+cleanLM2 <- lm(yPrime ~ Crews, data = cleaningDat)
+summary(cleanLM2)
+rStud2 <- studres(cleanLM2)
+plot(cleanLM2$fitted.values, rStud2)
+#what is downside of this approach?  (2 things!)
+
+#a slightly different approach
+#author:  "when X and Y are both measured in the same units, it is often natural to consider the 
+#same transformation to both X and Y"
+sqrtX <- sqrt(cleaningDat[, "Crews"])
+cleaningDat <- cbind(cleaningDat, sqrtX)
+cleanLM3 <- lm(yPrime ~ sqrtX, data = cleaningDat)
+summary(cleanLM3)
+rStud3 <- studres(cleanLM3)
+plot(cleanLM2$fitted.values, rStud3)
+#reduced curvature
+
+#WLS
+#this data set is unique in that we have multiple observations for each X
+#this is not usually the case
+#allows us to estimate the variance/standard deviation for each X! :)
+plot(cleaningDat[, c("Crews", "Rooms")])
+cleaningDat <- cleaningDat[, 1:3]  #removing columns from previous 2 approaches
+cleaningDat
+cleaningDat[ cleaningDat[, "Crews"] == 2, ]
+sd(cleaningDat[ cleaningDat[, "Crews"] == 2, "Rooms"])
+?aggregate
+aggregate(cleaningDat, by = list(cleaningDat[, "Crews"]), FUN = sd)
+storeAgg <- aggregate(cleaningDat, by = list(cleaningDat[, "Crews"]), FUN = sd)
+match(cleaningDat[, "Crews"], storeAgg[, "Group.1"])
+indexVec <- match(cleaningDat[, "Crews"], storeAgg[, "Group.1"])
+stdDevVec <- storeAgg[indexVec, "Rooms"]
+cleaningDat <- cbind(cleaningDat, stdDevVec)
+cleaningDat
+wlsFit <- lm(Rooms ~ Crews, weights = stdDevVec, data = cleaningDat)
+summary(wlsFit)
+summary(cleanLM1)
+plot(cleaningDat[, c("Crews", "Rooms")])
+abline(cleanLM1$coefficients, col = 3)
+abline(wlsFit$coefficients, col = 2)
+#should we do a residual plot?
+

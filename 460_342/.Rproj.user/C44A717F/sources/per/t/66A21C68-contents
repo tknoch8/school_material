@@ -1,0 +1,149 @@
+#---------------- example tidy eval function ----------------------------------
+
+library(tidyverse)
+
+mtcars -> data
+
+grouped_mean <- function(data, group_var, summary_var) {
+  group_var <- enquo(group_var)  # captures expression supplied as argument by user in current function
+  summary_var <- enquo(summary_var)  # captures expression supplied as argument by user in current function
+  
+  data %>%
+    group_by(!!group_var) %>%  # !! variable to unquote in function evaluation
+    summarise(mean = mean(!!summary_var))  # !! variable to unquote in function evaluation
+}
+
+grouped_mean(mtcars, cyl, mpg)
+
+
+#---------------- make same function for sd -----------------------------------
+
+
+get_grouped_sd <- function(data, group_var, summary_var) {
+  
+  group_var <- sym(group_var)  # converts to symbol. can also be indirect reference. such as group_var <- "cyl"
+  summary_var <- sym(summary_var)  # converts to symbol
+  
+  sds <- data %>% 
+    group_by(!!group_var) %>% 
+    summarise(sd = sd(!!summary_var))
+  
+  return(sds)
+  
+}
+
+get_grouped_sd(
+  data = mtcars,
+  group_var = "cyl", # group_var
+  summary_var = "hp"
+)
+
+
+data(starwars)
+
+
+
+grouped_mean2 <- function(data, group_var, summary_var) {
+  group_var <- syms(group_var)
+  summary_var <- sym(summary_var)
+  
+  data %>%
+    group_by(!!!group_var) %>%
+    summarise(mean = mean(!!summary_var))
+}
+
+grouped_mean2(
+  data = starwars, 
+  group_var = c("species", "gender"),
+  summary_var = "mass"
+)
+
+grouped_mean2(
+  data = starwars, 
+  group_var = "gender",
+  summary_var = "mass"
+)
+
+
+cols <- syms(c("species", "gender"))
+
+cols
+
+group_by(starwars, !!cols)
+
+rlang::qq_show(group_by(starwars, !!cols))
+
+rlang::qq_show(group_by(starwars, !!cols[[1]], !!cols[[2]]))  # !! each column individually
+
+rlang::qq_show(group_by(starwars, !!!cols))  # or use !!! on list of columns
+
+#---------------- ... list argument -------------------------------------------
+
+data(mtcars)
+
+grouped_mean2 <- function(.data, .summary_var, ...) {  # any number of variables can be given in ...
+  summary_var <- enquo(.summary_var)
+  group_vars <- enquos(...)
+  
+  .data %>%
+    group_by(!!!group_vars) %>% 
+    summarise(mean = mean(!!summary_var))
+}
+
+grouped_mean2(
+  .data = mtcars, 
+  .summary_var = disp, 
+  cyl, 
+  am
+)
+
+rlang::qq_show(
+  grouped_mean2(
+    .data = mtcars, 
+    .summary_var = disp, 
+    cyl, 
+    am
+  )
+)
+
+# When does it become useful to do all this extra work? Whenever you need to modify the arguments or their names.
+
+
+#----------------  create tidy eval function ----------------------------------
+
+library(tidyverse)
+
+data(mtcars)
+
+get_grouped_means <- function(.summary_var, .group_vars, ...) {
+  
+  summary_var <- enquo(.summary_var)
+  group_vars <- enquos(...)
+  
+  .data %>% 
+    dplyr::group_by(!!!group_vars) %>% 
+    dplyr::summarise(mean = mean(!!summary_var))
+
+}
+
+rlang::qq_show(get_grouped_means(
+  .data = mtcars,
+  .summary_var = mpg,
+  gear,
+  hp,
+  disp)
+)
+
+my_means <- get_grouped_means(
+  .data = mtcars,
+  .summary_var = mpg,
+  gear,
+  hp,
+  disp
+)
+
+
+
+
+
+

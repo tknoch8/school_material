@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541439702933.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1271061115",
+    "id" : "B04E70E1",
+    "lastKnownWriteTime" : 1542140671,
+    "last_content_update" : 1542140671226,
+    "path" : "/R/460_342/r_scripts/Euro_Clust_Demo.R",
+    "project_path" : "r_scripts/Euro_Clust_Demo.R",
+    "properties" : {
+        "cursorPosition" : "107,60",
+        "scrollLine" : "78"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

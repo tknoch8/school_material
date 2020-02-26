@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549895714682.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1399854129",
+    "id" : "86954B13",
+    "lastKnownWriteTime" : 1549902818,
+    "last_content_update" : 1549902818626,
+    "path" : "~/OneDrive - Polaris Alpha/r/school_material/460_342/test_pca_fa_function.R",
+    "project_path" : "test_pca_fa_function.R",
+    "properties" : {
+        "cursorPosition" : "25,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

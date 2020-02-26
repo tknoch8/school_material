@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541439722831.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1721617332",
+    "id" : "C147681E",
+    "lastKnownWriteTime" : 1539186362,
+    "last_content_update" : 1539186362,
+    "path" : "/R/460_342/r_scripts/Distances.R",
+    "project_path" : "r_scripts/Distances.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

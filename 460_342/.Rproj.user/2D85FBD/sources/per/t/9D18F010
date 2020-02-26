@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541439716909.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4139274091",
+    "id" : "9D18F010",
+    "lastKnownWriteTime" : 1540992304,
+    "last_content_update" : 1540992304,
+    "path" : "/R/460_342/r_scripts/EuroFAdemo.R",
+    "project_path" : "r_scripts/EuroFAdemo.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

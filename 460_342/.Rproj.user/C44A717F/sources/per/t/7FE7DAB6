@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549752524968.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2942012516",
+    "id" : "7FE7DAB6",
+    "lastKnownWriteTime" : 1549903710,
+    "last_content_update" : 1549903710981,
+    "path" : "~/OneDrive - Polaris Alpha/r/school_material/460_342/r_scripts/pca_fa_function.R",
+    "project_path" : "r_scripts/pca_fa_function.R",
+    "properties" : {
+        "cursorPosition" : "12,1",
+        "docOutlineVisible" : "1",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

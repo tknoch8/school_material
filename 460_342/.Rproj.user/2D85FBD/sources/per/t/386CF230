@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541439689391.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2127083544",
+    "id" : "386CF230",
+    "lastKnownWriteTime" : 1539186763,
+    "last_content_update" : 1539186763,
+    "path" : "/R/460_342/r_scripts/Crimedemo.R",
+    "project_path" : "r_scripts/Crimedemo.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
