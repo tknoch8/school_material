@@ -2,18 +2,18 @@
     "collab_server" : "",
     "contents" : "",
     "created" : 1581365262891.000,
-    "dirty" : true,
+    "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "0",
     "id" : "47D353C7",
-    "lastKnownWriteTime" : 1539186763,
-    "last_content_update" : 1582676617201,
+    "lastKnownWriteTime" : 1582679155,
+    "last_content_update" : 1582679155057,
     "path" : "~/OneDrive - Polaris Alpha/r/school_material/460_342/r_scripts/Crimedemo.R",
     "project_path" : "460_342/r_scripts/Crimedemo.R",
     "properties" : {
-        "cursorPosition" : "86,0",
-        "scrollLine" : "54"
+        "cursorPosition" : "95,50",
+        "scrollLine" : "74"
     },
     "read_only" : false,
     "read_only_alternatives" : [
