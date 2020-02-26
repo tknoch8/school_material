@@ -6,7 +6,7 @@ library(GGally)
 library(ggrepel)
 library(here)
 
-crime <- read.csv(here("data_raw", "crime.csv"))
+crime <- read.csv(here("data_sets", "crime.csv"))
 crime
 
 ## convert to table
