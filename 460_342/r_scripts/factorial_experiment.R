@@ -57,6 +57,6 @@ hsdOut
 
 # We could come up with a response variable, such as percieved opinion of 
   # current government (continuous), and come up with a few factor variables, such
-  # as level of access to water, percieved level of security, or anything like that, 
+  # as level of access to water, perceived level of security, or anything like that, 
   # and run a factorial experiment to explore which factor variables (as well as
   # interactions) have significant effects on the response variable.

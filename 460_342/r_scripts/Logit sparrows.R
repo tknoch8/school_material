@@ -1,24 +1,29 @@
-sparrows <- read.csv("http://www.stat.colostate.edu/~pturk/data/sparrows.csv", header = TRUE)
+require(tidyverse)
 
-attach(sparrows)
+sparrows <- read_csv("https://raw.githubusercontent.com/chenm7/sparrow-survival/master/survival_sparrow.csv")
 
-(n1 <- table(Survive)["S"])
+# attach(sparrows)
 
-(n2 <- table(Survive)["NS"])
+# (n1 <- table(Survive)["S"])
 
-?ifelse
-Group.surv <- ifelse(Survive == "S", 1, 0)
+# (n2 <- table(Survive)["NS"])
 
-table(Group.surv)
+# ?ifelse
+# Group.surv <- ifelse(STATUS == "Survived", 1, 0)
+
+# table(Group.surv)
 
 ### Ombnibus Test ###
-
+Group.surv <- sparrows %>% 
+  mutate(status = if_else(STATUS == "Survived", 1, 0)) %>% 
+  select(status, everything()) %>% 
+  select(-STATUS)
 ## intercept-only model
-logitn.sparr <- glm(Group.surv ~ 1, family = binomial(link = "logit"), data = sparrows)
+logitn.sparr <- glm(Group.surv$status ~ 1, family = binomial(link = "logit"), data = Group.surv)
 
 ## full model with predictors
-logit.sparr <- glm(Group.surv ~ y1 + y2 + y3 + y4 + y5,
-                   family = binomial(link = "logit"), data = sparrows)
+logit.sparr <- glm(status ~ .,
+                   family = binomial(link = "logit"), data = Group.surv)
 
 
 anova(logitn.sparr, logit.sparr, test = "Chisq") ## compare models and test if all 5 betas = 0
